@@ -1,0 +1,794 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  
+  /* =========================
+     アプリ全体
+     ========================= */
+  
+  .app {
+    min-height: 100vh;
+  
+    position: relative;
+  
+    overflow: hidden;
+  
+    padding: 20px;
+  
+    box-sizing: border-box;
+  }
+  
+  
+  /* =========================
+     テーマボタン
+     ========================= */
+  
+  .theme-buttons {
+    position: relative;
+    z-index: 20;
+  
+    display: flex;
+  
+    justify-content: center;
+  
+    gap: 6px;
+  
+    margin-bottom: 18px;
+  }
+  
+  .theme-buttons button {
+    border: none;
+  
+    border-radius: 18px;
+  
+    padding: 7px 13px;
+  
+    background: rgba(255, 255, 255, 0.35);
+  
+    color: #398a87;
+  
+    font-size: 12px;
+  
+    cursor: pointer;
+  
+    backdrop-filter: blur(4px);
+  }
+  
+  .theme-buttons button:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+  
+  
+  /* =========================
+     メイン
+     ========================= */
+  
+  .main-card {
+    position: relative;
+  
+    z-index: 5;
+  
+    max-width: 560px;
+  
+    margin: 0 auto;
+  }
+  
+  
+  /* =========================
+     タイトル
+     ========================= */
+  
+  h1 {
+    position: relative;
+  
+    z-index: 10;
+  
+    text-align: center;
+  
+    color: #398a87;
+  
+    font-size: 32px;
+  
+    letter-spacing: 2px;
+  
+    margin: 8px 0 50px;
+  
+    text-shadow:
+      -1px -1px 0 rgba(255, 255, 255, 0.9),
+       1px -1px 0 rgba(255, 255, 255, 0.9),
+      -1px  1px 0 rgba(255, 255, 255, 0.9),
+       1px  1px 0 rgba(255, 255, 255, 0.9);
+  }
+  
+  
+  /* =========================
+     Day
+     ========================= */
+  
+  .app.day {
+    background: linear-gradient(
+      180deg,
+      #b9e6f2 0%,
+      #d9f0ed 45%,
+      #fff1c7 100%
+    );
+  }
+  
+  
+  /* =========================
+     Sunset
+     ========================= */
+  
+  .app.sunset {
+    background: linear-gradient(
+      180deg,
+      #b8dff2 0%,
+      #c9b8e8 38%,
+      #f2c4d2 68%,
+      #f6c18d 100%
+    );
+  }
+  
+  
+  /* =========================
+     Night
+     ========================= */
+  
+  .app.night {
+    background: linear-gradient(
+      180deg,
+      #6f9fd1 0%,
+      #8f8ac5 40%,
+      #b19acb 70%,
+      #e1c3c8 100%
+    );
+  }
+  
+  
+  /* =========================
+     Retro
+     ========================= */
+  
+  .app.retro {
+    background: #e3d8c2;
+  }
+  
+  
+  /* =========================
+     今日の記録
+     ========================= */
+  
+  .today {
+    position: relative;
+  
+    z-index: 8;
+  
+    text-align: center;
+  
+    padding: 45px 30px 48px;
+  
+    background: transparent;
+  
+    border-radius: 30px;
+  }
+  
+  .today h2,
+  .today p,
+  .today input,
+  .today button,
+  .sukkiri-value {
+    position: relative;
+    z-index: 10;
+  }
+  
+  
+  /* =========================
+     雲
+     ========================= */
+  
+  .cloud-shape {
+    position: absolute;
+  
+    inset: -20px;
+  
+    z-index: 1;
+  
+    overflow: visible;
+  
+    pointer-events: none;
+  }
+  
+  .cloud-shape svg {
+    width: 125%;
+  
+    height: 125%;
+  
+    position: absolute;
+  
+    left: 50%;
+  
+    top: 50%;
+  
+    transform:
+      translate(-54%, -50%)
+      rotate(-2deg);
+  }
+  
+  .cloud-shape path {
+    fill: rgba(255, 255, 255, 0.42);
+  }
+  
+  
+  /* =========================
+     Retro タイル
+     ========================= */
+  
+  .retro-tiles {
+    position: absolute;
+  
+    inset: 0;
+  
+    z-index: 1;
+  
+    pointer-events: none;
+  
+    background-color: #e3d8c2;
+  
+    background-image:
+      linear-gradient(
+        90deg,
+        transparent 0,
+        transparent 139px,
+        rgba(70, 65, 55, 0.16) 140px
+      ),
+      linear-gradient(
+        0deg,
+        transparent 0,
+        transparent 139px,
+        rgba(70, 65, 55, 0.16) 140px
+      ),
+      linear-gradient(
+        90deg,
+        #e3d8c2 0 25%,
+        #566f76 25% 50%,
+        #62694f 50% 75%,
+        #8b6253 75% 100%
+      );
+  
+    background-size:
+      140px 140px,
+      140px 140px,
+      560px 560px;
+  
+    background-repeat:
+      repeat,
+      repeat,
+      repeat;
+  }
+  
+  
+  /* =========================
+     Retro 六角形
+     ========================= */
+  
+  .retro-diamond {
+    position: absolute;
+  
+    left: 50%;
+  
+    top: 270px;
+  
+    width: 1000px;
+  
+    height: 420px;
+  
+    transform: translate(-50%, -50%);
+  
+    background: rgba(239, 231, 211, 0.72);
+  
+    border: 4px solid rgba(72, 82, 73, 0.30);
+  
+    z-index: 6;
+  
+    pointer-events: none;
+  
+    clip-path: polygon(
+      8% 50%,
+      18% 18%,
+      82% 18%,
+      92% 50%,
+      82% 82%,
+      18% 82%
+    );
+  }
+  
+  
+  /* =========================
+     見出し
+     ========================= */
+  
+  h2 {
+    position: relative;
+  
+    z-index: 10;
+  
+    color: #398a87;
+  
+    font-size: 19px;
+  
+    margin: 0 0 18px;
+  }
+  
+  
+  /* =========================
+     すっきり度
+     ========================= */
+  
+  input[type="range"] {
+    width: 70%;
+  
+    margin: 18px auto;
+  
+    display: block;
+  
+    accent-color: #55aaa4;
+  }
+  
+  .sukkiri-value {
+    font-size: 30px;
+  
+    font-weight: bold;
+  
+    color: #398a87;
+  
+    margin: 10px 0;
+  }
+  
+  
+  /* =========================
+     記録ボタン
+     ========================= */
+  
+  .record-button {
+    margin-top: 8px;
+  
+    padding: 12px 30px;
+  
+    border: none;
+  
+    border-radius: 30px;
+  
+    background: #f59b68;
+  
+    color: white;
+  
+    font-size: 14px;
+  
+    cursor: pointer;
+  }
+  
+  .record-button:hover {
+    opacity: 0.8;
+  }
+  
+  
+  /* =========================
+     カレンダー
+     ========================= */
+  
+  .calendar-section {
+    position: relative;
+  
+    z-index: 10;
+  
+    margin-top: 30px;
+  
+    padding: 20px 14px;
+  
+    border-radius: 28px;
+  
+    background: rgba(255, 255, 255, 0.28);
+  
+    backdrop-filter: blur(5px);
+  }
+  
+  
+  /* 月ヘッダー */
+  
+  .calendar-header {
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: space-between;
+  
+    margin-bottom: 16px;
+  }
+  
+  .calendar-header h2 {
+    margin: 0;
+  
+    font-size: 20px;
+  
+    text-align: center;
+  }
+  
+  .month-button {
+    width: 36px;
+  
+    height: 36px;
+  
+    border: none;
+  
+    border-radius: 50%;
+  
+    background: rgba(255, 255, 255, 0.5);
+  
+    color: #398a87;
+  
+    font-size: 25px;
+  
+    line-height: 1;
+  
+    cursor: pointer;
+  }
+  
+  
+  /* 曜日 */
+  
+  .calendar-weekdays {
+    display: grid;
+  
+    grid-template-columns: repeat(7, 1fr);
+  
+    text-align: center;
+  
+    font-size: 12px;
+  
+    color: #607b78;
+  
+    margin-bottom: 6px;
+  }
+  
+  
+  /* 日付 */
+  
+  .calendar-grid {
+    display: grid;
+  
+    grid-template-columns: repeat(7, 1fr);
+  
+    gap: 5px;
+  }
+  
+  .calendar-day {
+    position: relative;
+  
+    aspect-ratio: 1;
+  
+    border: none;
+  
+    border-radius: 12px;
+  
+    background: rgba(255, 255, 255, 0.25);
+  
+    color: #435c59;
+  
+    cursor: pointer;
+  
+    font-size: 14px;
+  }
+  
+  .calendar-day:hover {
+    background: rgba(255, 255, 255, 0.55);
+  }
+  
+  
+  /* 今日 */
+  
+  .calendar-day.today-date {
+    box-shadow:
+      inset 0 0 0 2px rgba(245, 155, 104, 0.75);
+  }
+  
+  
+  /* 選択中 */
+  
+  .calendar-day.selected-date {
+    background: rgba(255, 255, 255, 0.72);
+  
+    box-shadow:
+      inset 0 0 0 2px #55aaa4;
+  }
+  
+  
+  /* 記録あり */
+  
+  .calendar-day.has-record {
+    font-weight: bold;
+  }
+  
+  
+  /* 記録マーク */
+  
+  .record-dot {
+    position: absolute;
+  
+    width: 6px;
+  
+    height: 6px;
+  
+    border-radius: 50%;
+  
+    background: #f59b68;
+  
+    left: 50%;
+  
+    bottom: 6px;
+  
+    transform: translateX(-50%);
+  }
+  
+  
+  /* =========================
+     選択日の記録
+     ========================= */
+  
+  .selected-day {
+    margin-top: 20px;
+  
+    padding: 16px;
+  
+    border-radius: 20px;
+  
+    background: rgba(255, 255, 255, 0.32);
+  }
+  
+  .selected-day h3 {
+    margin: 0 0 12px;
+  
+    font-size: 16px;
+  
+    color: #398a87;
+  
+    text-align: center;
+  }
+  
+  .no-record {
+    text-align: center;
+  
+    font-size: 13px;
+  
+    opacity: 0.65;
+  
+    margin: 8px 0;
+  }
+  
+  .calendar-record {
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: space-between;
+  
+    gap: 10px;
+  
+    padding: 9px 0;
+  
+    border-bottom:
+      1px dashed rgba(63, 120, 112, 0.25);
+  }
+  
+  .calendar-record:last-child {
+    border-bottom: none;
+  }
+  
+  .calendar-record-info {
+    display: flex;
+  
+    gap: 10px;
+  
+    flex-wrap: wrap;
+  
+    font-size: 13px;
+  }
+  
+  .small-delete-button {
+    border: none;
+  
+    border-radius: 15px;
+  
+    padding: 5px 10px;
+  
+    background: #f6c3cc;
+  
+    color: #5a454b;
+  
+    font-size: 11px;
+  
+    cursor: pointer;
+  }
+  
+  
+  /* =========================
+     記録一覧
+     ========================= */
+  
+  .records {
+    position: relative;
+  
+    z-index: 10;
+  
+    margin-top: 55px;
+  }
+  
+  .records h2 {
+    text-align: center;
+  }
+  
+  .record-item {
+    position: relative;
+  
+    z-index: 10;
+  
+    padding: 18px 8px;
+  
+    border-bottom:
+      1px dashed rgba(63, 120, 112, 0.4);
+  }
+  
+  .record-info {
+    display: flex;
+  
+    gap: 12px;
+  
+    flex-wrap: wrap;
+  
+    font-size: 14px;
+  }
+  
+  .record-actions {
+    display: flex;
+  
+    gap: 8px;
+  
+    margin-top: 10px;
+  }
+  
+  .record-actions button {
+    border: none;
+  
+    border-radius: 20px;
+  
+    padding: 6px 13px;
+  
+    background: #f6c3cc;
+  
+    color: #5a454b;
+  
+    font-size: 12px;
+  
+    cursor: pointer;
+  }
+  
+  
+  /* =========================
+     詳細
+     ========================= */
+  
+  .detail {
+    position: relative;
+  
+    z-index: 10;
+  
+    margin-top: 16px;
+  
+    padding: 16px 12px;
+  
+    background: rgba(255, 255, 255, 0.4);
+  
+    border-radius: 20px;
+  }
+  
+  .detail p {
+    font-size: 14px;
+  
+    margin-bottom: 8px;
+  }
+  
+  
+  /* =========================
+     タイプ
+     ========================= */
+  
+  .type-buttons {
+    display: flex;
+  
+    gap: 7px;
+  
+    flex-wrap: wrap;
+  }
+  
+  .type-buttons button {
+    width: 38px;
+  
+    height: 38px;
+  
+    border: none;
+  
+    border-radius: 50%;
+  
+    background: #fff0a8;
+  
+    color: #5d5540;
+  
+    cursor: pointer;
+  }
+  
+  .type-buttons button.selected {
+    background: #f6c3cc;
+  
+    color: #5a454b;
+  }
+  
+  
+  /* =========================
+     Retroカラー
+     ========================= */
+  
+  .app.retro h1,
+  .app.retro h2,
+  .app.retro .sukkiri-value,
+  .app.retro .selected-day h3 {
+    color: #4c6663;
+  }
+  
+  .app.retro .record-button {
+    background: #965847;
+  }
+  
+  .app.retro .theme-buttons button {
+    color: #4c6663;
+  }
+  .calendar-toggle {
+    position: relative;
+  
+    z-index: 20;
+  
+    display: flex;
+  
+    align-items: center;
+  
+    justify-content: center;
+  
+    gap: 6px;
+  
+    margin: 18px auto 0;
+  
+    padding: 6px 12px;
+  
+    border: none;
+  
+    border-radius: 16px;
+  
+    background: rgba(255, 255, 255, 0.22);
+  
+    color: #398a87;
+  
+    font-size: 11px;
+  
+    cursor: pointer;
+  
+    backdrop-filter: blur(4px);
+  }
+  
+  .calendar-toggle:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+  
+  .calendar-icon {
+    font-size: 14px;
+  }
